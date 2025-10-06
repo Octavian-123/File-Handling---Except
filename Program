@@ -1,0 +1,55 @@
+def appendFile(filePath):
+    try:
+        with open(filePath, "a") as file:
+            file.write()
+            print("Your text was succesfuly added.")
+            file.close
+    except FileNotFoundError:
+        print("File not found.")
+    except Exception as e:
+        print("An error occurred:", e)
+
+
+def writeFile(filePath):
+    try:
+        with open(filePath, "w") as file:
+            file.write("Hello there!")
+            file.close()
+    except FileNotFoundError:
+        print("File not found.")
+    except Exception as e:
+        print("An error occurred:", e)
+    
+def createFile(filePath):
+    try:
+        file1 = open(filePath, "x")
+        print("File created!")
+        file1.close
+    except FileNotFoundError:
+        print("File not found.")
+    except Exception as e:
+        print("An error occurred:", e)
+
+
+def readFile(filePath):
+    try:
+        with open(filePath, "r") as file:
+            content = file.read()
+        print(content)
+        file.close()
+    except FileNotFoundError:
+        print("File not found.")
+    except Exception as e:
+        print("An error occurred:", e)
+
+def main():
+    filePath = "country.txt"
+    print(readFile(filePath))
+    createFile(filePath)
+    writeFile(filePath)
+    appendFile(filePath)
+
+
+if (__name__ == "__main__"):
+
+    main()
